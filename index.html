@@ -31,7 +31,7 @@
         }
         
         .topnav a.active {
-          background-color: #04AA6D;
+          background-color: #04AA6D; /* active part is green */
           color: white;
         } 
   
@@ -47,22 +47,31 @@
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
-      
-      <header>
-        <h1>This is the header</h1>
-      </header>
-      <h1>This is a Heading</h1>
-      <p>This is a paragraph.</p>
-      <ul>
-        <li>First item</li>
-        <li>Second item</li>
-      </ul>
 
-      <br>
-      <blockquote> Life is beautiful.
-        <br> <a href="https://de.wikipedia.org/wiki/Harry_Potter">  - some guy</a> <!-- br tag creates a line break, so some guy is on a different line -->
-      </blockquote>
-      <hr> <!-- horizontal line, self-closing like br -->
+      <div id="home" style="display: block;">
+          <!-- Content for the home page goes here -->
+          <header>
+            <h1>This is the header</h1>
+          </header>
+          <h1>This is a Heading</h1>
+          <p>This is a paragraph.</p>
+          <ul>
+            <li>First item</li>
+            <li>Second item</li>
+          </ul>
+          <br>
+          <blockquote> Life is beautiful.
+            <br> <a href="https://de.wikipedia.org/wiki/Harry_Potter">  - some guy</a> <!-- br tag creates a line break, so some guy is on a different line -->
+          </blockquote>
+          <hr> <!-- horizontal line, self-closing like br -->
+      </div>
+
+      
+      <div id="about" style="display: none;">
+        <h2>About Page</h2>
+        <!-- Content for the about page goes here -->
+      </div>
+      
 
       <footer>
         <p>Ann-Kristin Bergmann<br>
