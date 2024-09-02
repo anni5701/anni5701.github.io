@@ -1,75 +1,106 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <title>Page Title</title>
-      <style>
-        footer {
-          text-align: center;
-          padding: 40px;
-          background-color: DarkSalmon;
-          color: white;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .topnav {  
-          overflow: hidden;
-          background-color: #333;
-          display: flex;
-          justify-content: center;
-        }
-        
-        .topnav a {
-          display: inline-block;
-          color: #f2f2f2;
-          text-align: center;
-          padding: 20px 30px;
-          text-decoration: none;
-          font-size: 17px;
-        }
-        
-        .topnav a:hover {
-          background-color: #ddd;
-          color: black;
-        }
-        
-        .topnav a.active {
-          background-color: #04AA6D; /* active part is green */
-          color: white;
-        } 
-        /* dot indicates that .topnav is a class selector for HTML elements that have the topnav class applied to them, allowing me to apply styles to these elements 
-.topnav a is for <a> elements in topnav class */
 
-    </head>
-    
-    
-      <body>
-        <div class="topnav">
-          <a class="active" href="#home" onclick="showPage('home')">Home</a>
-          <a href="#about" onclick="showPage('about')">About</a>
-          <a href="#gallery" onclick="showPage('gallery')">Gallery</a>
-          <a href="#contact" onclick="showPage('contact')">Contact</a>
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question label {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .submit-button:hover {
+            background-color: #039e60;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Questionnaire</h1>
+
+    <form id="questionnaireForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. How satisfied are you with our product?</p>
+            <label><input type="checkbox" name="question1" value="1"> Very Dissatisfied</label>
+            <label><input type="checkbox" name="question1" value="2"> Dissatisfied</label>
+            <label><input type="checkbox" name="question1" value="3"> Neutral</label>
+            <label><input type="checkbox" name="question1" value="4"> Satisfied</label>
+            <label><input type="checkbox" name="question1" value="5"> Very Satisfied</label>
         </div>
-      
-        <iframe id="pageFrame" src="home.html" style="width: 100%; height: 100%; border: none;"></iframe>
-      
-        <footer>
-          <p>Ann-Kristin Bergmann<br>
-          <a href="mailto:ann-kristin.bergmann@tum.de">ann-kristin.bergmann@tum.de</a>
-          </p>
-        </footer>
-      
-        <script>
-          function showPage(page) {
-            var pageFrame = document.getElementById("pageFrame");
-            var url = page + ".html";
-            pageFrame.src = url;
-            
-            var links = document.getElementsByClassName('active');
-            for (var i = 0; i < links.length; i++) {
-              links[i].classList.remove('active');
-            }
-            
-            document.querySelector('[onclick="showPage(\'' + page + '\')"]').classList.add('active');
-          }
-        </script>
-      </body>
-  </html>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. How likely are you to recommend our product to others?</p>
+            <label><input type="checkbox" name="question2" value="1"> Very Unlikely</label>
+            <label><input type="checkbox" name="question2" value="2"> Unlikely</label>
+            <label><input type="checkbox" name="question2" value="3"> Neutral</label>
+            <label><input type="checkbox" name="question2" value="4"> Likely</label>
+            <label><input type="checkbox" name="question2" value="5"> Very Likely</label>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. How would you rate the quality of our customer service?</p>
+            <label><input type="checkbox" name="question3" value="1"> Poor</label>
+            <label><input type="checkbox" name="question3" value="2"> Fair</label>
+            <label><input type="checkbox" name="question3" value="3"> Good</label>
+            <label><input type="checkbox" name="question3" value="4"> Very Good</label>
+            <label><input type="checkbox" name="question3" value="5"> Excellent</label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. How would you rate the ease of use of our product?</p>
+            <label><input type="checkbox" name="question4" value="1"> Very Difficult</label>
+            <label><input type="checkbox" name="question4" value="2"> Difficult</label>
+            <label><input type="checkbox" name="question4" value="3"> Neutral</label>
+            <label><input type="checkbox" name="question4" value="4"> Easy</label>
+            <label><input type="checkbox" name="question4" value="5"> Very Easy</label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. How would you rate the overall value for money of our product?</p>
+            <label><input type="checkbox" name="question5" value="1"> Very Poor</label>
+            <label><input type="checkbox" name="question5" value="2"> Poor</label>
+            <label><input type="checkbox" name="question5" value="3"> Fair</label>
+            <label><input type="checkbox" name="question5" value="4"> Good</label>
+            <label><input type="checkbox" name="question5" value="5"> Excellent</label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+</body>
+</html>
 
