@@ -105,31 +105,52 @@
     <script>
         function downloadCSV() {
             const form = document.getElementById('questionnaireForm');
-            const formData = new FormData(form);
             const data = [];
-
-            // Loop through the form data to create CSV content
-            for (let [key, value] of formData.entries()) {
-                data.push(`${key},${value}`);
-            }
-
+        
+            // Add header row
+            data.push("Question Index,Answer");
+        
+            // Get all questions
+            const questions = form.querySelectorAll('.question');
+        
+            // Loop through each question
+            questions.forEach((question, index) => {
+                const questionIndex = index + 1; // 1-based index for questions
+                const checkboxes = question.querySelectorAll('input[type="checkbox"]');
+                let answer = [];
+        
+                // Loop through each checkbox
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        answer.push(checkbox.value);
+                    }
+                });
+        
+                // If no checkbox is selected, store "No answer"
+                if (answer.length === 0) {
+                    answer.push("No answer");
+                }
+        
+                // Push the question index and the answer into the data array as separate columns
+                data.push(`${questionIndex},${answer.join(', ')}`);
+            });
+        
             // Create a CSV string
-            const csvContent = "data:text/csv;charset=utf-8," 
-                + data.join("\n");
-
+            const csvContent = "data:text/csv;charset=utf-8," + data.join("\n");
+        
             // Create a download link
             const encodedUri = encodeURI(csvContent);
             const link = document.createElement("a");
             link.setAttribute("href", encodedUri);
             link.setAttribute("download", "questionnaire_responses.csv");
             document.body.appendChild(link);
-
+        
             // Trigger the download
             link.click();
-
+        
             // Remove the link after downloading
             document.body.removeChild(link);
-        }
+}
     </script>
 
 </body>
