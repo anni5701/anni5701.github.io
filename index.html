@@ -108,7 +108,7 @@
             const data = [];
         
             // Add header row
-            data.push("Question Index,Answer");
+            data.push(["Question Index", "Answer"]);
         
             // Get all questions
             const questions = form.querySelectorAll('.question');
@@ -131,12 +131,13 @@
                     answer.push("No answer");
                 }
         
-                // Push the question index and the answer into the data array as separate columns
-                data.push(`${questionIndex},${answer.join(', ')}`);
+                // Push the question index and the answers as separate columns
+                data.push([questionIndex, answer.join(', ')]);  // Each entry is a 2-element array
             });
         
-            // Create a CSV string
-            const csvContent = "data:text/csv;charset=utf-8," + data.join("\n");
+            // Convert the data array into CSV format
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + data.map(row => row.join(",")).join("\n");
         
             // Create a download link
             const encodedUri = encodeURI(csvContent);
@@ -150,7 +151,7 @@
         
             // Remove the link after downloading
             document.body.removeChild(link);
-}
+        }
     </script>
 
 </body>
