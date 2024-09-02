@@ -97,9 +97,40 @@
             <label><input type="checkbox" name="question5" value="5"> Zyklus unregelmäßig/keine Periode</label>
         </div>
 
+
         <!-- Submit Button -->
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="button" class="submit-button" onclick="downloadCSV()">Submit</button>
     </form>
+
+    <script>
+        function downloadCSV() {
+            const form = document.getElementById('questionnaireForm');
+            const formData = new FormData(form);
+            const data = [];
+
+            // Loop through the form data to create CSV content
+            for (let [key, value] of formData.entries()) {
+                data.push(`${key},${value}`);
+            }
+
+            // Create a CSV string
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + data.join("\n");
+
+            // Create a download link
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "questionnaire_responses.csv");
+            document.body.appendChild(link);
+
+            // Trigger the download
+            link.click();
+
+            // Remove the link after downloading
+            document.body.removeChild(link);
+        }
+    </script>
 
 </body>
 </html>
