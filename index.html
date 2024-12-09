@@ -3,95 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown Menu</title>
-    <style>
-        /* Basic styling for the body */
-        body {
-            font-family: Arial, sans-serif; /* Use a clean, modern font */
-            margin: 0; /* Remove default margin */
-        }
-
-        /* Styling for the header */
-        .header {
-            background-color: #333; /* Dark background for the header */
-            padding: 10px 20px; /* Add some padding around the content */
-            display: flex; /* Use flexbox to position items */
-            justify-content: flex-end; /* Align content (dropdown) to the right */
-        }
-
-        /* Styling for the dropdown container */
-        .dropdown {
-            position: relative; /* Position relative to contain the dropdown content */
-        }
-
-        /* Styling for the dropdown button */
-        .dropdown .dropbtn {
-            cursor: pointer; /* Change cursor to pointer to indicate interactivity */
-            font-size: 16px; /* Font size of the button text */
-            border: none; /* Remove border around the button */
-            outline: none; /* Remove outline when the button is focused */
-            color: white; /* White text color for visibility */
-            padding: 14px 16px; /* Padding around the text for better spacing */
-            background-color: inherit; /* Inherit background color from the header */
-        }
-
-        /* Styling for the dropdown content (initially hidden) */
-        .dropdown-content {
-            display: none; /* Hide dropdown content by default */
-            position: absolute; /* Position relative to the dropdown container */
-            right: 0; /* Align the dropdown content to the right */
-            background-color: #f9f9f9; /* Light background for the dropdown items */
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-            z-index: 10; /* Ensure the dropdown content appears above other elements */
-        }
-
-        /* Styling for individual links in the dropdown */
-        .dropdown-content a {
-            float: none; /* Prevent float issues */
-            color: black; /* Black text color for contrast */
-            padding: 12px 16px; /* Add padding for clickable area */
-            text-decoration: none; /* Remove underline from links */
-            display: block; /* Make links take up full width */
-            text-align: left; /* Align text to the left */
-        }
-
-        /* Hover effect for dropdown links */
-        .dropdown-content a:hover {
-            background-color: #ddd; /* Light gray background when hovering */
-        }
-
-        /* Show dropdown content when the dropdown is hovered */
-        .dropdown:hover .dropdown-content {
-            display: block; /* Display the dropdown content */
-        }
-
-        /* Change dropdown button background and text color on hover */
-        .dropdown:hover .dropbtn {
-            background-color: #ddd; /* Light gray background for the button */
-            color: black; /* Black text for contrast */
-        }
-    </style>
+    <title>Index Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Falls du CSS hast -->
 </head>
 <body>
-    <!-- Header section -->
-    <div class="header">
-        <!-- Dropdown menu container -->
-        <div class="dropdown">
-            <!-- Dropdown button -->
-            <button class="dropbtn">Menu ▼</button>
-            <!-- Dropdown menu content -->
-            <div class="dropdown-content">
-                <a href="home.html">Home</a> <!-- Link to the home.html file --> <!-- Link to Home -->
-                <a href="#about">About</a> <!-- Link to About -->
-            </div>
-        </div>
+    <!-- Platzhalter für Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Inhalt der Seite -->
+    <div style="padding: 20px;">
+        <h1>Welcome to the Index Page</h1>
+        <p>This is the main page with a dynamic navbar.</p>
     </div>
 
-    <!-- Page content -->
-    <div style="padding: 20px;">
-        <h1>Welcome to the Page</h1>
-        <p>This is a simple example of a dropdown menu positioned to the right containing "Home" and "About".</p>
-    </div>
+    <!-- JavaScript laden -->
+    <script src="script.js"></script>
 </body>
 </html>
 
