@@ -5,6 +5,64 @@
             <a href="index.html">Home</a>
             <a href="home.html">Home Page</a>
             <a href="about.html">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
 </div>
+
+<style>
+    /* Navbar Styles */
+    .header {
+        background-color: #333; /* Dark background for navbar */
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    /* Dropdown styling */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropbtn {
+        background-color: #333;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9; /* Light background */
+        min-width: 160px; /* Minimum width for dropdown */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        z-index: 10;
+        right: 0;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Hover effects */
+    .dropdown-content a:hover {
+        background-color: #ddd; /* Highlight links on hover */
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block; /* Show dropdown on hover */
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #555; /* Change button background on hover */
+    }
+</style>
