@@ -1,0 +1,28 @@
+body {
+    margin: 0; /* Removes default browser margins around the page */
+    padding: 0; /* Removes default browser padding */
+    font-family: Arial, sans-serif; /* Sets the default font for text on the page */
+    background-image: url('IMG_2538.JPG'); /* Specifies the background image */
+    background-size: cover; /* Ensures the background image covers the entire screen width */
+    background-repeat: no-repeat; /* Prevents the background image from tiling */
+    background-position: top center; /* Positions the image at the top center */
+    background-attachment: fixed; /* Ensures the background remains static on scroll */
+}
+
+.navbar {
+    background-color: #82a6fe; /* Navbar background color */
+    padding: 10px 20px; /* Padding for navbar spacing */
+    display: flex;
+    justify-content: flex-end; /* Aligns navbar to the right */
+}
+
+.navbar a {
+    color: white; /* Navbar link color */
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+.navbar a:hover {
+    background-color: white; /* Change background on hover */
+    color: #82a6fe; /* Change text color on hover */
+}
